@@ -6,18 +6,24 @@ module.exports = {
     extends: ["plugin:react/recommended", "standard"],
     parserOptions: {
         ecmaFeatures: {
-            jsx: true,
-            modules: true,
-            legacyDecorators: true
+            jsx: true
         },
         ecmaVersion: "latest",
-        sourceType: "module",
-        requireConfigFile: false
+        sourceType: "module"
     },
     plugins: ["react"],
     rules: {
-        indent: ["error", 4],
-        "space-before-function-paren": ["error", "never"],
-        quotes: ["error", "double", { allowTemplateLiterals: true }]
+        indent: [0, 4],
+        "space-before-function-paren": [
+            "error",
+            { anonymous: "always", named: "never" }
+        ],
+        quotes: [
+            "error",
+            "double",
+            {
+                allowTemplateLiterals: true
+            }
+        ]
     }
 }
